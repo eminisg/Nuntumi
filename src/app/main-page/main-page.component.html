@@ -1,0 +1,62 @@
+<header class="header">
+  <article class="header-inner">
+    <div class="header-left">
+      <img src="assets/Logo.svg" class="logo" alt="">
+      <nav class="nav-menu-wrapper" *ngIf="serviceItem.dataCheck">
+        <ul class="nav-menu-list">
+          <li class="nav-menu-item" [routerLinkActiveOptions]="{exact:true}" [routerLinkActive]="['active-link']"><a [routerLink]="'/home'">Home</a></li>
+          <li class="nav-menu-item" [routerLinkActive]="'active-link'" ><a [routerLink]="'/tags'">Tags</a></li>
+          <li class="nav-menu-item" [routerLinkActive]="'active-link'" ><a [routerLink]="'/about'">About</a></li>
+        </ul>
+      </nav>
+    </div>
+
+
+    <div class="header-right-media">
+      <button class="media-menu-btn" (click)="showSideBar()">
+        <img src="assets/icons/media-menu.svg" alt="">
+      </button>
+    </div>
+    <div class="header-right">
+      <div class="input-wrapper" style="position: relative;" *ngIf="serviceItem.dataCheck">
+        <input type="text" class="header-search" [ngClass]="(showItem) ? 'show-header-search' : 'header-search'"
+               [(ngModel)]="headerInputValue">
+        <img src="assets/icons/searhicon.svg" alt="" class="search-icon" (click)="showSearchItem()">
+      </div>
+      <ng-container *ngIf="!serviceItem.dataCheck">
+        <button [routerLink]="'/login'" class="header-btn-global header-btn">Login</button>
+      </ng-container>
+
+      <ng-container *ngIf="serviceItem.dataCheck">
+        <img style="cursor: pointer" class="notification-icon" src="assets/icons/notification.svg" alt="">
+        <div (click)="showUserMenuItem()" class="img-wrapper" style="margin-left: 31px;">
+          <img src="https://vjoy.cc/wp-content/uploads/2020/10/photo-girl-avatar-1.jpeg" alt="">
+        </div>
+        <nav>
+          <ul (click)="hideUserMenuItem()" class="user-menu"
+              [ngClass]="(!showUserMenu) ? 'toggle-user-item-normal' : 'toggle-user-item'">
+
+            <li class="user-menu-item-wrapper">
+              <a (click)="routeNavigateTo('/profile')">
+                <p class="user-name">{{userName}} {{userSurname}}</p>
+                <p class="user-name-link">{{userLink}}</p>
+              </a>
+            </li>
+
+            <li style="margin-top: 8px;" class="user-menu-item-wrapper"><a (click)="routeNavigateTo('/dashboard')"
+                                                                           class="user-item">Dashboard</a></li>
+            <li class="user-menu-item-wrapper"><a (click)="routeNavigateTo('/new-post')" class="user-item">Write a
+              Post</a></li>
+            <li class="user-menu-item-wrapper"><a (click)="routeNavigateTo('/settings')" class="user-item">Settings</a>
+            </li>
+            <li class="user-menu-item-wrapper"><a (click)="routeNavigateTo('/help')" class="user-item">Help</a></li>
+            <li class="user-menu-item-wrapper"><a (click)="logOut()" class="user-item">Sign out</a></li>
+          </ul>
+        </nav>
+      </ng-container>
+    </div>
+    <app-side-bar-menu></app-side-bar-menu>
+  </article>
+
+
+</header>

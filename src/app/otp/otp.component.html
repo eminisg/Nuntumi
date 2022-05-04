@@ -1,0 +1,19 @@
+<div class="login-page-wrapper">
+  <div class="login-page-inner">
+    <h1 class="form-title">Forgot password ?</h1>
+    <p class="form-subtitle">Instructions for resetting the password will be immediately with phone number to you.</p>
+    <form action="">
+      <div class="otp-wrapper">
+        <input type="text" id="firstInput" [mask]="'0'" #input1 (input)="nextIput(input1,input2)" (keydown.backspace)="prevInput(1,input2)">
+        <input type="text" [mask]="'0'" #input2 (input)="nextIput(input2,input3)" (keydown.backspace)="prevInput(input1,input2)">
+        <input type="text" [mask]="'0'" #input3 (input)="nextIput(input3,input4)" (keydown.backspace)="prevInput(input2,input3)">
+        <input type="text" [mask]="'0'" #input4 (input)="nextIput(input4,input5)" (keydown.backspace)="prevInput(input3,input4)">
+        <input type="text" [mask]="'0'" #input5 (input)="nextIput(input5,input6)" (keydown.backspace)="prevInput(input4,input5)">
+        <input type="text" [mask]="'0'" #input6 (input)="nextIput(input6,1)" (keydown.backspace)="prevInput(input5,input6)">
+      </div>
+      <button href="#" type="submit" class="form-btn"><span
+        style="margin: 0 auto;">Send email</span></button>
+    </form>
+  </div>
+
+</div>

@@ -1,0 +1,56 @@
+.profile-wrapper {
+  display: flex;
+  max-width: 700px;
+  margin: 10% auto;
+  align-items: center;
+}
+
+.network-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.home-page-header {
+  max-width: 1440px;
+  width: 100%;
+  height: 450px;
+  margin: 0 auto 3rem;
+  background-image: url('../../assets/bgimgs/profile-main-img.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.page-article {
+  position: absolute;
+  right: 5%;
+  top: 5%;
+  padding: 2.5rem 2rem 2rem 2rem;
+}
+
+.home-page-article {
+
+  h2 {
+    margin-bottom: 12px;
+  }
+
+  .time-wrapper {
+    display: flex;
+    align-items: center;
+    margin-bottom: 14px;
+  }
+
+  small {
+    margin-left: 10px;
+  }
+}
+
+.profile-article {
+  margin: 0 auto;
+}
+
+.icons-wrapper {
+  margin-top: 0 !important;
+}

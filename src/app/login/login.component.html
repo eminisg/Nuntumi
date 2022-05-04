@@ -1,0 +1,57 @@
+<div class="login-page-wrapper">
+  <div class="access-to-website">
+    <h1 style="margin-bottom: 14px;">Emails and Passwords to enter</h1>
+    <select name="emails" id="select1" (click)="selectMail()">
+      <option *ngFor="let items of serviceItem.loginItems" value="{{items?.email}}">{{items?.email}}</option>
+    </select>
+    <select name="passwords" id="select2" (click)="selectPassword()">
+      <option *ngFor="let items of serviceItem.loginItems" value="{{items?.password}}">{{items?.password}}</option>
+    </select>
+  </div>
+
+  <div class="login-page-inner">
+    <form action="" [formGroup]="form" (ngSubmit)="submit()">
+      <h1 class="form-title">Welcome back</h1>
+      <p class="form-subtitle">Log in to get the most out of nuntium.</p>
+
+      <ng-container *ngIf="serviceItem.dataCheck === false && getInfo === true">
+        <small class="error-container">Not correct email or password</small>
+      </ng-container>
+
+
+      <input class="form-input" type="text" placeholder="User email" formControlName="email"
+             [ngClass]="{'invalid-input':f['email'].errors && f['email'].touched}">
+
+      <ng-container *ngIf="f['email'].errors && f['email'].touched">
+        <ng-container *ngIf="f['email'].errors['required']"><small class="error-container">Email is required</small>
+        </ng-container>
+        <ng-container *ngIf="f['email'].errors['pattern']"><small class="error-container">Email isn't pattern</small>
+        </ng-container>
+      </ng-container>
+
+      <input class="form-input" required type="text" placeholder="Password" formControlName="password"
+             [ngClass]="{'invalid-input':f['password'].errors && f['password'].touched}"
+      >
+
+      <ng-container *ngIf="f['password'].errors && f['password'].touched">
+        <ng-container *ngIf="f['password'].errors['required']"><small class="error-container">Password is
+          required</small>
+        </ng-container>
+        <ng-container *ngIf="f['password'].errors['pattern']"><small class="error-container">Minimum six characters, at
+          least one uppercase letter, one lowercase letter, one number and one special character:</small>
+        </ng-container>
+
+      </ng-container>
+
+      <div class="add-content">
+        <input type="checkbox">
+        <a [routerLink]="'/forgot-password'">Forgot password ?</a>
+      </div>
+      <button href="#" type="submit" (click)="getInfoFromBack()" class="form-btn"><span
+        style="margin: 0 auto;">Login</span></button>
+    </form>
+    <div class="add-content">
+      <a [routerLink]="'/sign-up'">Sign Up</a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,67 @@
+<div class="login-page-wrapper">
+  <div class="login-page-inner">
+    <form action="" [formGroup]="form" (ngSubmit)="submit()">
+      <button (click)="back()" class="back-btn"><img src="assets/icons/arrow-icon.png"></button>
+      <h1 class="form-title">Welcome To Registration</h1>
+      <p class="form-subtitle">Sign up to get the most out of nuntium.</p>
+
+      <input class="form-input" type="text" placeholder="User Name" formControlName="name"
+             [ngClass]="{'invalid-input':f['name'].errors && f['name'].touched}">
+
+      <ng-container *ngIf="f['name'].errors && f['name'].touched">
+        <ng-container *ngIf="f['name'].errors['required']"><small class="error-container">Name is required</small>
+        </ng-container>
+      </ng-container>
+
+      <input class="form-input" type="text" placeholder="User Surname" formControlName="surname"
+             [ngClass]="{'invalid-input':f['surname'].errors && f['surname'].touched}">
+
+      <ng-container *ngIf="f['surname'].errors && f['surname'].touched">
+        <ng-container *ngIf="f['surname'].errors['required']"><small class="error-container">Email is required</small>
+        </ng-container>
+      </ng-container>
+
+      <input class="form-input" type="text" placeholder="User email" formControlName="email"
+             [ngClass]="{'invalid-input':f['email'].errors && f['email'].touched}">
+
+      <ng-container *ngIf="f['email'].errors && f['email'].touched">
+        <ng-container *ngIf="f['email'].errors['required']"><small class="error-container">Email is required</small>
+        </ng-container>
+        <ng-container *ngIf="f['email'].errors['pattern']"><small class="error-container">Email isn't pattern</small>
+        </ng-container>
+      </ng-container>
+
+      <input class="form-input" required type="text" placeholder="Password" formControlName="password"
+             [ngClass]="{'invalid-input':f['password'].errors && f['password'].touched}"
+      >
+
+      <ng-container *ngIf="f['password'].errors && f['password'].touched">
+        <ng-container *ngIf="f['password'].errors['required']"><small class="error-container">Password is
+          required</small>
+        </ng-container>
+        <ng-container *ngIf="f['password'].errors['pattern']"><small class="error-container">Minimum six characters, at
+          least one uppercase letter, one lowercase letter, one number and one special character:</small>
+        </ng-container>
+
+      </ng-container>
+
+      <input class="form-input" required type="text" placeholder="Confirm Password" formControlName="confirmPassword"
+             [ngClass]="{'invalid-input':f['confirmPassword'].errors && f['confirmPassword'].touched}"
+      >
+
+      <ng-container *ngIf="f['confirmPassword'].errors && f['confirmPassword'].touched">
+        <ng-container *ngIf="f['confirmPassword'].errors['required']"><small class="error-container">Password is
+          required</small>
+        </ng-container>
+        <ng-container *ngIf="f['confirmPassword'].errors['pattern']"><small class="error-container">Minimum six characters, at
+          least one uppercase letter, one lowercase letter, one number and one special character:</small>
+        </ng-container>
+      </ng-container>
+
+      <ng-container *ngIf="passwordsConfirm === false"><small class="error-container">Not Confirm</small>
+      </ng-container>
+      <button [disabled]="form.invalid && passwordsConfirm === false" type="submit" class="form-btn"><span
+        style="margin: 0 auto;">Sign Up</span></button>
+    </form>
+  </div>
+</div>

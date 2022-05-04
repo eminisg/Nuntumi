@@ -1,0 +1,42 @@
+<div [ngClass]="this.serviceItem.state === false ? 'side-bar-wrapper' : 'show-sidebar'">
+ <div class="side-bar-inner">
+
+   <!--  <img class="notification-icon" src="assets/icons/notification.svg" alt="">-->
+
+   <div class="">
+
+     <ng-container *ngIf="serviceItem.dataCheck">
+       <div class="side-bar-header">
+         <div  class="img-wrapper">
+           <img class="profile-img" src="https://vjoy.cc/wp-content/uploads/2020/10/photo-girl-avatar-1.jpeg" alt="">
+         </div>
+         <a [routerLink]="'/profile'" >
+           <p class="user-name">{{userName}} {{userSurname}}</p>
+           <p class="user-name-link">{{userLink}}</p>
+         </a>
+       </div>
+
+       <ul class="nav-menu-list">
+         <li class="nav-menu-item" [routerLink]="'/home'">Home</li>
+         <li class="nav-menu-item" [routerLink]="'/tags'">Tags</li>
+         <li class="nav-menu-item" [routerLink]="'/about'">About</li>
+       </ul>
+
+       <ul  class="user-menu">
+         <li class="user-menu-item-wrapper"><a (click)="routeNavigateTo('/dashboard')" class="user-item">Dashboard</a>
+         </li>
+         <li class="user-menu-item-wrapper"><a (click)="routeNavigateTo('/new-post')" class="user-item">Write a Post</a></li>
+         <li class="user-menu-item-wrapper"><a (click)="routeNavigateTo('/settings')" class="user-item">Settings</a></li>
+         <li class="user-menu-item-wrapper"><a (click)="routeNavigateTo('/help')" class="user-item">Help</a></li>
+         <li class="user-menu-item-wrapper"><a (click)="logOut()" class="user-item">Sign out</a></li>
+       </ul>
+     </ng-container>
+   </div>
+ </div>
+  <ng-container *ngIf="!serviceItem.dataCheck">
+    <button [routerLink]="'/login'" class="header-btn-global side-bar-login-btn">Login</button>
+    <button [routerLink]="'/sign-up'" class="header-btn-global side-bar-login-btn">Sign In</button>
+    <button [routerLink]="'/forgot-password'" class="header-btn-global side-bar-login-btn">Forgot Password</button>
+  </ng-container>
+
+</div>

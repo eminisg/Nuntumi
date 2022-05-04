@@ -1,0 +1,11 @@
+
+
+.otp-wrapper{
+  display: grid;
+  grid-template-columns: repeat(6,1fr);
+  input{
+display: inline-block;
+    max-width: 35px;
+    padding: 10px;
+  }
+}

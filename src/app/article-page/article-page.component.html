@@ -1,0 +1,48 @@
+<div class="home-page-wrapper">
+  <div class="home-page-header aticles-page-header">
+    <img [src]="images[counter]" alt="">
+  </div>
+
+  <div class="articles-text article">
+    <h2 class="title-text">{{titlesArray[counter] | titlecase}}</h2>
+    <div class="time-wrapper">
+      <span class="article-date-text time-text">{{usersArray[counter] | titlecase}}</span>
+      <time class="time-text">November 3, 2012</time>
+    </div>
+    <p class="standard-text">
+      {{textArray[counter]}}
+      <br>
+      <br>
+      {{textArray[counter+1]}}
+      <br>
+      <br>
+      {{textArray[counter+2]}}
+      <br>
+      <br>
+      {{textArray[counter+3]}}
+    </p>
+  </div>
+  <div class="profile-wrapper">
+  <span class="title-top title-top-text">
+         ABOUT AUTHOR
+       </span>
+    <div class="img-wrapper" style="width: 200px;height: 200px;display: inline-table">
+      <img style="width: 200px;height: 200px" src="https://vjoy.cc/wp-content/uploads/2020/10/photo-girl-avatar-1.jpeg"
+           alt="">
+    </div>
+    <div class="article-style-footer" style="margin-left: 5%;">
+      <h2 style="margin-bottom: 3px;" class="article-style-title">{{userName}} {{userSurname}}</h2>
+      <div style="margin-bottom: 11px;" class="time-wrapper">
+        <small>{{userLink}}</small>
+      </div>
+      <p>Ipsum adipisicing culpa est nisi consequat ex amet magna culpa veniam tempor irure ea. Reprehenderit labore do
+        tempor eiusmod in consectetur ex sunt id mollit commodo ipsum deserunt quis.</p>
+    </div>
+  </div>
+  <button class="left-button" (click)="prevPost($event)">
+    <img src="assets/icons/articles-nav-icon.png" alt="">
+  </button>
+  <button class="right-button" (click)="nextPost($event)">
+    <img src="assets/icons/articles-nav-icon.png" alt="">
+  </button>
+</div>

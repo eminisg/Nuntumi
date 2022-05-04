@@ -1,0 +1,43 @@
+<div class="page-wrapper">
+  <div class="input-wrapper">
+    <input class="tags-input" id="tags-input" type="text" placeholder="Find the topics you care about..."
+           (keydown.enter)="showTagsResult()" [(ngModel)]="inputItem">
+    <img (click)="reset()" src="assets/icons/delete-icon.png" class="tags-search-icon delete-icon" alt="">
+    <img (click)="showTagsResult()" src="assets/icons/searhicon.svg" class="tags-search-icon" alt="">
+  </div>
+
+  <ng-container *ngIf="showItem === false">
+    <div class="tags-item-wrapper">
+      <ul *ngFor="let list of service.getTags">
+        <li (click)="setInInput(list.id)" class="tags-item">#{{list.tag}}</li>
+      </ul>
+    </div>
+  </ng-container>
+
+
+  <ng-container *ngIf="showItem === true && !isLoading">
+    <div class="articles-wrapper" *ngFor="let a of randomArray">
+      <div class="tags-img-wrapper" >
+        <img src="{{imagesArray[a]}}" alt="">
+      </div>
+      <div class="articles-text">
+       <span class="title-top title-top-text">
+         {{imageService.searchItem}}
+       </span>
+        <h2 class="title-text text-no-wrap">{{titlesArray[a] | titlecase}}</h2>
+        <div class="time-wrapper">
+          <span class="article-date-text time-text">{{mailsArray[a] | titlecase}}</span>
+          <time class="time-text">November 3, 2012</time>
+        </div>
+        <p class="standard-text">{{textArray[a] | titlecase}}</p>
+      </div>
+    </div>
+  </ng-container>
+  <ng-container *ngIf="searchId === 0">
+    <h1 style="margin-top: 20px;">CONTENT NOT FOUND</h1>
+  </ng-container>
+</div>
+
+<ng-template *ngIf="isLoading">
+  <div>Loading...</div>
+</ng-template>

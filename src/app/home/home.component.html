@@ -1,0 +1,160 @@
+<div class="home-page-wrapper">
+  <div class="home-page-header home-page-content-banner relative">
+    <div class="article-style content-page-article absolute">
+      <span class="light-text">FEATURED ARTICLE</span>
+      <h2 class="light-text top-distance">World’s Most Dangerous Technology Ever Made.</h2>
+      <div class="time-wrapper">
+        <small class="light-text">Ralph Hawkins</small>
+        <time class="light-text">May 7, 2019 (10 mins read)</time>
+      </div>
+      <p class="light-text">Proident aliquip velit qui commodo officia qui consectetur dolor ullamco aliquip elit incididunt. Ea minim ex
+        consectetur excepteur. Ex laborum nostrud mollit sint consectetur Lorem amet aliqua do enim. Commodo duis dolor
+        anim excepteur. In aliquip mollit nulla consequat velit magna.</p>
+    </div>
+  </div>
+  <div class="editor-pick">
+    <h2 class="editor-pick-title">Editor’s Picks</h2>
+
+    <div class="editor-pick-inner" (click)="navigateToArticle()">
+      <img src="assets/imgs/mitem1.jpg" alt="">
+      <div class="article-style">
+        <span >ARTICLES</span>
+        <h2 class="article-style-title">Culpa sit Laboris Exercitation ea Fugiat</h2>
+        <div class="time-wrapper">
+          <small>Leslie Pena</small>
+          <time>April 25, 2012 (6 mins read)</time>
+        </div>
+        <p>Incididunt occaecat et qui dolore consectetur magna. Lorem veniam ut et labore consequat ut ex sunt. Ut et
+          nostrud aliquip do anim proident ad nulla consectetur eu aute ex anim mollit. Anim aute exercitation nisi
+          fugiat. Dolor velit excepteur commodo proident nulla commodo ullamco labore et esse.</p>
+      </div>
+    </div>
+
+    <div class="editor-pick-inner" (click)="navigateToArticle()">
+      <img src="assets/imgs/mitem2.jpg" alt="">
+      <div class="article-style">
+        <span>ARTICLES</span>
+        <h2 class="article-style-title">Amet non Ex Officia nulla Cupidatat</h2>
+        <div class="time-wrapper">
+          <small>Jacob Henry</small>
+          <time>September 27, 2017 (8 mins read)</time>
+        </div>
+        <p>Sint anim Lorem aute duis Lorem incididunt. Nulla nostrud irure id ipsum aute excepteur duis sint. Do
+          occaecat sit dolor magna esse. Mollit incididunt cillum consectetur fugiat adipisicing dolor est id minim amet
+          cillum esse Lorem. Deserunt non duis excepteur aliqua duis eu reprehenderit.</p>
+      </div>
+    </div>
+
+    <div class="editor-pick-inner" (click)="navigateToArticle()">
+      <img src="assets/imgs/mitem3.jpg" alt="">
+      <div class="article-style">
+        <span>ARTICLES</span>
+        <h2 class="article-style-title">Dolor ex Tempor Cotur Culpa li</h2>
+        <div class="time-wrapper">
+          <small>Darrell Lane</small>
+          <time>May 16, 2017 (3 mins read)</time>
+        </div>
+        <p>Incididunt sint nulla eu adipisicing eu reprehenderit proident consequat est. Nisi consectetur incididunt
+          mollit officia ut cupidatat laborum proident eu velit Lorem deserunt deserunt voluptate. Proident nostrud
+          laborum reprehenderit culpa irure id labore do ad do minim nisi. Incididunt ex.</p>
+      </div>
+    </div>
+  </div>
+
+  <app-owl-carousel>
+
+  </app-owl-carousel>
+
+  <div class="home-page-header home-page-content-banner content-page-header relative">
+    <div class="article-style content-page-article absolute">
+      <span class="light-text">FEATURED ARTICLE</span>
+      <h2 class="light-text top-distance">World’s Most Dangerous Technology Ever Made.</h2>
+      <div class="time-wrapper">
+        <small class="light-text">Ralph Hawkins</small>
+        <time class="light-text">May 7, 2019 (10 mins read)</time>
+      </div>
+      <p class="light-text">Proident aliquip velit qui commodo officia qui consectetur dolor ullamco aliquip elit incididunt. Ea minim ex
+        consectetur excepteur. Ex laborum nostrud mollit sint consectetur Lorem amet aliqua do enim. Commodo duis dolor
+        anim excepteur. In aliquip mollit nulla consequat velit magna.</p>
+    </div>
+  </div>
+
+  <div class="footer-content">
+    <div class="footer-left">
+      <div class="articles-wrapper">
+        <div class="tags-img-wrapper">
+          <img src="{{imagesArray[0]}}" alt="">
+        </div>
+        <div class="articles-text">
+       <span class="title-top title-top-text">
+         {{imageService.searchItem}}
+       </span>
+          <h2 class="title-text text-no-wrap">{{titlesArray[0] | titlecase}}</h2>
+          <div class="time-wrapper">
+            <span class="article-date-text time-text">{{mailsArray[0] | titlecase}}</span>
+            <time class="time-text">November 3, 2012</time>
+          </div>
+          <p class="standard-text">{{textArray[0] | titlecase}}</p>
+        </div>
+      </div>
+
+      <div class="articles-wrapper">
+        <div class="tags-img-wrapper">
+          <img src="{{imagesArray[1]}}" alt="">
+        </div>
+        <div class="articles-text">
+       <span class="title-top title-top-text">
+         {{imageService.searchItem}}
+       </span>
+          <h2 class="title-text text-no-wrap">{{titlesArray[1] | titlecase}}</h2>
+          <div class="time-wrapper">
+            <span class="article-date-text time-text">{{mailsArray[1] | titlecase}}</span>
+            <time class="time-text">November 3, 2012</time>
+          </div>
+          <p class="standard-text">{{textArray[1] | titlecase}}</p>
+        </div>
+      </div>
+
+      <div class="articles-wrapper">
+        <div class="tags-img-wrapper">
+          <img src="{{imagesArray[2]}}" alt="">
+        </div>
+        <div class="articles-text">
+       <span class="title-top title-top-text">
+                  {{imageService.searchItem}}
+       </span>
+          <h2 class="title-text text-no-wrap">{{titlesArray[2] | titlecase}}</h2>
+          <div class="time-wrapper">
+            <span class="article-date-text time-text">{{mailsArray[2] | titlecase}}</span>
+            <time class="time-text">November 3, 2012</time>
+          </div>
+          <p class="standard-text">{{textArray[2] | titlecase}}</p>
+        </div>
+      </div>
+
+      <div class="articles-wrapper">
+        <div class="tags-img-wrapper">
+          <img src="{{imagesArray[3]}}" alt="">
+        </div>
+        <div class="articles-text">
+       <span class="title-top title-top-text">
+                  {{imageService.searchItem}}
+       </span>
+          <h2 class="title-text text-no-wrap">{{titlesArray[3] | titlecase}}</h2>
+          <div class="time-wrapper">
+            <span class="article-date-text time-text">{{mailsArray[3] | titlecase}}</span>
+            <time class="time-text">November 3, 2012</time>
+          </div>
+          <p class="standard-text">{{textArray[3] | titlecase}}</p>
+        </div>
+      </div>
+
+    </div>
+    <div class="footer-right tags-item-content">
+      <ul class="tags-list">
+        <li><a [routerLink]="'/tags'">tags.</a></li>
+        <li *ngFor="let l of newItemsArr"><a (click)="showResult(l)">{{l}}</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
